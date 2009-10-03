@@ -712,3 +712,234 @@ ZWQuBjoKQHVzZWR7BjsHVA==--a56ed65d056dd68a0cc410306dc682c1c02820b2
 Rendering template within layouts/employers
 Rendering employers/index
 Completed in 0.05471 (18 reqs/sec) | Rendering: 0.04414 (80%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employers]
+  [4;36;1mSQL (0.001690)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000209)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.003205)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002024)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000245)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmployers (20091003165528)
+  [4;36;1mSQL (0.000132)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002570)[0m   [0mCREATE TABLE "employers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255) DEFAULT NULL NULL, "last_name" varchar(255) DEFAULT NULL NULL, "ssn" varchar(255) DEFAULT NULL NULL, "address" varchar(255) DEFAULT NULL NULL, "postal_code" varchar(255) DEFAULT NULL NULL, "city" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001604)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091003165528')[0m
+  [4;35;1mSQL (0.000297)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000344)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000113)[0m   [0mPRAGMA index_list("employers")[0m
+
+
+Processing EmployersController#index (for 127.0.0.1 at 2009-10-03 20:28:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjNiODQ1NTlkMTMxM2Q3YWNmYTFiYzU1YzY3NGEx
+ZDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00fde617ddf9fa1b2be96a52b8d932ff2ba63e0d
+  Parameters: {"action"=>"index", "controller"=>"employers"}
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 0.02160 (46 reqs/sec) | Rendering: 0.00767 (35%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployersController#index (for 127.0.0.1 at 2009-10-03 20:44:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjNiODQ1NTlkMTMxM2Q3YWNmYTFiYzU1YzY3NGEx
+ZDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00fde617ddf9fa1b2be96a52b8d932ff2ba63e0d
+  Parameters: {"action"=>"index", "controller"=>"employers"}
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 0.02330 (42 reqs/sec) | Rendering: 0.00949 (40%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployersController#create (for 127.0.0.1 at 2009-10-03 20:44:43) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjNiODQ1NTlkMTMxM2Q3YWNmYTFiYzU1YzY3NGEx
+ZDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00fde617ddf9fa1b2be96a52b8d932ff2ba63e0d
+  Parameters: {"commit"=>"Order", "authenticity_token"=>"d71e725f32f3159e9fcb0f831862ce79a5103253", "action"=>"create", "employer"=>{"address"=>"dsa", "city"=>"dsa", "ssn"=>"dsa", "postal_code"=>"dsa", "last_name"=>"das", "first_name"=>"das"}, "controller"=>"employers"}
+  [4;36;1mEmployer Create (0.000400)[0m   [0;1mINSERT INTO "employers" ("address", "city", "created_at", "ssn", "postal_code", "updated_at", "last_name", "first_name") VALUES('dsa', 'dsa', '2009-10-03 17:44:43', 'dsa', 'dsa', '2009-10-03 17:44:43', 'das', 'das')[0m
+Rendering template within layouts/employers
+Rendering employers/new
+
+
+ActionView::MissingTemplate (Missing template employers/new.html.erb in view path /home/mhjort/Projects/PensionMaid/app/views):
+    /vendor/rails/actionpack/lib/action_view/template.rb:85:in `raise_missing_template_exception'
+    /vendor/rails/actionpack/lib/action_view/template.rb:78:in `set_extension_and_file_name'
+    /vendor/rails/actionpack/lib/action_view/template.rb:15:in `initialize'
+    /vendor/rails/actionpack/lib/action_view/base.rb:245:in `new'
+    /vendor/rails/actionpack/lib/action_view/base.rb:245:in `render_file'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1108:in `render_for_file'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:865:in `render_with_no_layout'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:880:in `render_with_no_layout'
+    /vendor/rails/actionpack/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /app/controllers/employers_controller.rb:32:in `create'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `call'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `call'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `respond'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `each'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `respond'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    /app/controllers/employers_controller.rb:29:in `create'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/mhjort/Projects/PensionMaid/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployersController#index (for 127.0.0.1 at 2009-10-03 20:45:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjNiODQ1NTlkMTMxM2Q3YWNmYTFiYzU1YzY3NGEx
+ZDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidFbXBsb3llciB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHRg==--739ac333e36921c6cf2a97ec723b9231a40cc404
+  Parameters: {"action"=>"index", "controller"=>"employers"}
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 0.02667 (37 reqs/sec) | Rendering: 0.01384 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployersController#create (for 127.0.0.1 at 2009-10-03 20:45:29) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjNiODQ1NTlkMTMxM2Q3YWNmYTFiYzU1YzY3NGEx
+ZDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidFbXBsb3llciB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHVA==--a56ed65d056dd68a0cc410306dc682c1c02820b2
+  Parameters: {"commit"=>"Order", "authenticity_token"=>"d71e725f32f3159e9fcb0f831862ce79a5103253", "action"=>"create", "employer"=>{"address"=>"dsa", "city"=>"da", "ssn"=>"dsa", "postal_code"=>"das", "last_name"=>"dsa", "first_name"=>"dsa"}, "controller"=>"employers"}
+  [4;35;1mEmployer Create (0.000403)[0m   [0mINSERT INTO "employers" ("address", "city", "created_at", "ssn", "postal_code", "updated_at", "last_name", "first_name") VALUES('dsa', 'da', '2009-10-03 17:45:29', 'dsa', 'das', '2009-10-03 17:45:29', 'dsa', 'dsa')[0m
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 0.02789 (35 reqs/sec) | Rendering: 0.00535 (19%) | DB: 0.00040 (1%) | 200 OK [http://localhost/employers]
+  [4;36;1mSQL (0.000408)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000227)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.002676)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002071)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000237)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000145)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmployers (20091003165528)
+  [4;36;1mSQL (0.000131)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002686)[0m   [0mCREATE TABLE "employers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255) DEFAULT NULL NULL, "last_name" varchar(255) DEFAULT NULL NULL, "ssn" varchar(255) DEFAULT NULL NULL, "address" varchar(255) DEFAULT NULL NULL, "postal_code" varchar(255) DEFAULT NULL NULL, "city" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001611)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091003165528')[0m
+  [4;35;1mSQL (0.000283)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000286)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000092)[0m   [0mPRAGMA index_list("employers")[0m
+
+
+Processing EmployersController#index (for 127.0.0.1 at 2009-10-03 20:46:25) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjNiODQ1NTlkMTMxM2Q3YWNmYTFiYzU1YzY3NGEx
+ZDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidFbXBsb3llciB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHRg==--739ac333e36921c6cf2a97ec723b9231a40cc404
+  Parameters: {"action"=>"index", "controller"=>"employers"}
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 0.02607 (38 reqs/sec) | Rendering: 0.01267 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployersController#index (for 127.0.0.1 at 2009-10-03 20:48:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjNiODQ1NTlkMTMxM2Q3YWNmYTFiYzU1YzY3NGEx
+ZDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidFbXBsb3llciB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHVA==--a56ed65d056dd68a0cc410306dc682c1c02820b2
+  Parameters: {"action"=>"index", "controller"=>"employers"}
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 0.02074 (48 reqs/sec) | Rendering: 0.00799 (38%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployersController#create (for 127.0.0.1 at 2009-10-03 20:49:04) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjNiODQ1NTlkMTMxM2Q3YWNmYTFiYzU1YzY3NGEx
+ZDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00fde617ddf9fa1b2be96a52b8d932ff2ba63e0d
+  Parameters: {"commit"=>"Order", "authenticity_token"=>"d71e725f32f3159e9fcb0f831862ce79a5103253", "action"=>"create", "employer"=>{"address"=>"dsa", "city"=>"das", "ssn"=>"dsa", "postal_code"=>"dsa", "last_name"=>"das", "first_name"=>"das"}, "controller"=>"employers"}
+  [4;36;1mEmployer Create (0.000686)[0m   [0;1mINSERT INTO "employers" ("address", "city", "created_at", "ssn", "postal_code", "updated_at", "last_name", "first_name") VALUES('dsa', 'das', '2009-10-03 17:49:04', 'dsa', 'dsa', '2009-10-03 17:49:04', 'das', 'das')[0m
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 0.02834 (35 reqs/sec) | Rendering: 0.00547 (19%) | DB: 0.00069 (2%) | 200 OK [http://localhost/employers]
+
+
+Processing EmployersController#index (for 127.0.0.1 at 2009-10-03 20:49:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjNiODQ1NTlkMTMxM2Q3YWNmYTFiYzU1YzY3NGEx
+ZDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidFbXBsb3llciB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHRg==--739ac333e36921c6cf2a97ec723b9231a40cc404
+  Parameters: {"action"=>"index", "controller"=>"employers"}
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 0.07967 (12 reqs/sec) | Rendering: 0.00779 (9%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployersController#index (for 127.0.0.1 at 2009-10-03 20:49:14) [GET]
+  Session ID: 448e28f937d4825254fba111db005379
+  Parameters: {"action"=>"index", "controller"=>"employers"}
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 0.02471 (40 reqs/sec) | Rendering: 0.00781 (31%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployersController#index (for 127.0.0.1 at 2009-10-03 20:50:01) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNDcyZGFhN2M3OGNhMzgyMTQ1MTZjYjllMDVkMDBh
+ZmUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--fc532e043096f649ff01a58e43f773356ede04f0
+  Parameters: {"action"=>"index", "controller"=>"employers"}
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 0.02156 (46 reqs/sec) | Rendering: 0.00773 (35%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]

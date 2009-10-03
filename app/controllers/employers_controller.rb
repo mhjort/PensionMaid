@@ -6,18 +6,6 @@ class EmployersController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @employer }
-    end
-  end
-
-  # GET /employers/1
-  # GET /employers/1.xml
-  def show
-    @employer = Employer.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @employer }
     end
   end
 
@@ -29,11 +17,9 @@ class EmployersController < ApplicationController
     respond_to do |format|
       if @employer.save
         flash[:notice] = 'Employer was successfully created.'
-        format.html { redirect_to(@employer) }
-        format.xml  { render :xml => @employer, :status => :created, :location => @employer }
+        format.html { render :action => "index" }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @employer.errors, :status => :unprocessable_entity }
+        format.html { render :action => "index" }
       end
     end
   end
