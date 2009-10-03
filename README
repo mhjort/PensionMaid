@@ -1,0 +1,3 @@
+# Howto install Jquery
+ruby script/plugin install http://ennerchi.googlecode.com/svn/trunk/plugins/jrails
+
