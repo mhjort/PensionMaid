@@ -943,3 +943,106 @@ c2h7AAY6CkB1c2VkewA=--fc532e043096f649ff01a58e43f773356ede04f0
 Rendering template within layouts/employers
 Rendering employers/index
 Completed in 0.02156 (46 reqs/sec) | Rendering: 0.00773 (35%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "employers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "ssn" varchar(255), "address" varchar(255), "postal_code" varchar(255), "city" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091003165528')[0m
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-10-04 16:33:59) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/employers_controller.rb:1
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (56.9ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmployersController#index (for 127.0.0.1 at 2009-10-04 16:34:40) [GET]
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 161ms (View: 145, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EmployersController#create (for 127.0.0.1 at 2009-10-04 16:34:43) [POST]
+  Parameters: {"commit"=>"Order", "authenticity_token"=>"fDIVC1qavd8M/8O3b4O9oUMDRpadX1nJmaVqzhcO0os=", "employer"=>{"city"=>"", "address"=>"", "postal_code"=>"", "ssn"=>"", "last_name"=>"", "first_name"=>"das"}}
+  [4;36;1mEmployer Create (0.8ms)[0m   [0;1mINSERT INTO "employers" ("address", "city", "created_at", "ssn", "postal_code", "updated_at", "last_name", "first_name") VALUES('', '', '2009-10-04 13:34:43', '', '', '2009-10-04 13:34:43', '', 'das')[0m
+Rendering template within layouts/employers
+Rendering employers/index
+Completed in 44ms (View: 14, DB: 1) | 200 OK [http://localhost/employers]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCREATE TABLE "employers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "ssn" varchar(255), "address" varchar(255), "postal_code" varchar(255), "city" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091003165528')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "employers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "ssn" varchar(255), "address" varchar(255), "postal_code" varchar(255), "city" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091003165528')[0m
