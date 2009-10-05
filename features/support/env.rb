@@ -30,3 +30,23 @@ end
 
 require 'cucumber/rails/rspec'
 require 'webrat/core/matchers'
+
+require 'spec/expectations'
+require 'selenium'
+
+# "before all"
+browser = Selenium::SeleniumDriver.new("localhost", 4444, "*firefox", "http://localhost", 15000)
+ 
+Before do
+  @browser = browser
+  @browser.start
+end
+ 
+After do
+  @browser.stop
+end
+ 
+# "after all"
+at_exit do
+  browser.close rescue nil
+end
