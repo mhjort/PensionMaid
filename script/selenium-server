@@ -1,0 +1,4 @@
+#!/bin/sh
+
+java -jar /usr/lib/ruby/gems/1.8/gems/webrat-0.5.3/vendor/selenium-server.jar
+
