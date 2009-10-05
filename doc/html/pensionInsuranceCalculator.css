@@ -1,0 +1,155 @@
+@charset "UTF-8";
+body {
+	padding: 0;
+	margin: 0;
+	background: #586C84;
+	color: #333333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+h1 {
+	color: #D1F0FF;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+h2 {
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+h3 {
+	font-size: 12px;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+table th {
+	text-align: left;
+	padding-right: 10px;
+	font-weight: normal;
+}
+table td {
+	padding: 2px;
+}
+input[type="text"] {
+	border: 1px solid #999999;
+	-moz-border-radius: 3px;
+	width: 120px;
+}
+input.short {
+	width: 80px;
+}
+input.long {
+	width: 200px;
+}
+input:focus {
+	background-color: #D1F0FF;
+}
+#contactInfo, 
+#pensionInfo, 
+#payment {
+	padding: 20px;
+	-moz-border-radius: 5px;
+	width: 720px;
+	background: white;
+}
+#contentContainer {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 740px;
+}
+#contactInfo {
+	-moz-border-radius: 5px;
+	position: relative;
+}
+#employerInfo {
+	width: 240px;
+}
+#pensionInfo {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+#pensionInfo select {
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+#pensionInfo table {
+	width: 675px;
+}
+#pensionInfo table th {
+	vertical-align: center;
+	padding-left: 2px;
+}
+#pensionInfo table th em {
+	font-size: 0.8em;
+	font-style: italic;
+}
+#pensionInfo .salary input {
+	font-weight: bold;
+	width: 50px;
+	text-align: right;
+	background-color: #F9FCDD;
+}
+#pensionInfo .calculatedAmount {
+	text-align: center;
+}
+#pensionInfo #totalRow td div {
+	font-size: 1.2em;
+	font-weight: bold;
+	border-top: 2px solid black;
+}
+#payment {
+	margin-top: 20px;
+}
+#payment input[type="submit"] {
+	font-weight: bold;
+	margin-top: 10px;
+}
+#payment #paymentOptions {
+	position: relative;
+	margin-top: 20px;
+}
+#payment #snailMail {
+	width: 170px;
+}
+#payment #snailMail, 
+#payment #eBankLinks {
+	padding: 20px;
+	height: 130px;
+	background: #d1dae5;
+	-moz-border-radius: 5px;
+}
+#payment #paymentDivider {
+	position: absolute;
+	left: 245px;
+	top: 70px;
+	font-weight: bold;
+}
+#payment #eBankLinks {
+	position: absolute;
+	left: 300px;
+	top: 0px;
+	width: 175px;
+}
+#payment #eBankLinks ul {
+	margin-top: 5px;
+	padding: 0px;
+}
+#payment #eBankLinks ul li {
+	list-style: none;
+	background: url(bullet.gif) 0px 4px no-repeat;
+	padding-left: 15px;
+}
+#payment #eBankLinks a, 
+#payment #eBankLinks a:link, 
+#payment #eBankLinks a:visited, 
+#payment #eBankLinks a:active, 
+#payment #eBankLinks a:hover {
+	text-decoration: none;
+	color: #2D60C6;
+}

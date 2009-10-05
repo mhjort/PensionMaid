@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Pension insurance calculator</title>
+<link href="pensionInsuranceCalculator.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div id="contentContainer">
+  <h1>Pension Insurance calculator</h1>
+  <div id="contactInfo">
+    <div id="employerInfo">
+      <h2>Employer</h2>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th>The employer is</th>
+          <td><input name="employerStatus" type="radio" id="employerStatusHouseHold" checked="checked" />
+            <label for="employerStatusHouseHold">a household</label>
+            <br />
+            <input type="radio" name="employerStatus" id="employerStatusCompany"  />
+            <label for="employerStatusCompany">a company </label></td>
+        </tr>
+        <tr>
+          <th><label for="employerFirstName">Firstname</label></th>
+          <td><input name="employerFirstName" type="text" id="employerFirstName" value="Timo" />
+          </td>
+        </tr>
+        <tr>
+          <th><label for="employerLastName">Lastname</label></th>
+          <td><input name="employerLastName" type="text" id="employerLastName" value="Rissanen" /></td>
+        </tr>
+        <tr>
+          <th><label for="employerSocialSecurityNumber">Social security number</label></th>
+          <td><input type="text" name="employerSocialSecurityNumber" id="employerSocialSecurityNumber" /></td>
+        </tr>
+        <tr>
+          <th><label for="employerAddress">Address</label></th>
+          <td><input name="employerAddress" type="text" id="employerAddress" value="Eurantie 12 B 44" /></td>
+        </tr>
+        <tr>
+          <th><label for="employerPostalCode">Postal code</label></th>
+          <td><input name="employerPostalCode" type="text" class="short" id="employerPostalCode" value="00550"/></td>
+        </tr>
+        <tr>
+          <th><label for="employerCounty">City</label></th>
+          <td><input name="employerCounty" type="text" id="employerCounty" value="Helsinki" /></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="pensionInfo">
+    <h2>Employees and pension insurance payments</h2>
+    <label for="salaryMonth">Salary month</label>
+    <select name="salaryMonth" id="salaryMonth">
+      <option>September 2009</option>
+      <option>August 2009</option>
+      <option>July 2009</option>
+      <option>June 2009</option>
+      <option>May 2009</option>
+      <option>April 2009</option>
+      <option>March 2009</option>
+      <option>February 2009</option>
+      <option>January 2009</option>
+      <option>December 2008</option>
+      <option>November 2008</option>
+      <option>October 2008</option>
+    </select>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Social security number</th>
+        <th class="salary" scope="col"><strong>Salary</strong></th>
+        <th class="calculatedAmount" scope="col"><strong>Pension insurance</strong></th>
+        <th class="calculatedAmount" scope="col"><em>Employee's share of the pension insurance</em></th>
+      </tr>
+      <tr>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td class="salary"><input type="text" value="9500" /></td>
+        <td class="calculatedAmount"><strong>2128,00€</strong></td>
+        <td class="calculatedAmount"><em>91,50€</em></td>
+      </tr>
+      <tr>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td class="salary"><input type="text" /></td>
+        <td class="calculatedAmount">&nbsp;</td>
+        <td class="calculatedAmount">&nbsp;</td>
+      </tr>
+      <tr id="totalRow">
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class="salary">&nbsp;</td>
+        <td class="calculatedAmount"><div>2128,00€</div></td>
+        <td class="calculatedAmount">&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+  <div id="payment">
+    <h2>Payment</h2>
+    <p>
+      <input name="checkbox" type="checkbox" id="checkbox" checked="checked" />
+      Send a breakdown of the pension insurance payments to email address
+      <input type="text" class="long" value="timo.rissanen@gmail.com" />
+    </p>
+    <div id="paymentOptions">
+      <div id="snailMail">
+        <h3>Order a printed invoice to address</h3>
+        <p>Timo Rissanen <br />
+          Eurantie 12 B 44<br />
+          00550 Helsinki</p>
+        <input type="submit" name="orderInvoice" id="orderInvoice" value="Order invoice" />
+      </div>
+      <div id="paymentDivider"> or </div>
+      <div id="eBankLinks">
+        <h3>Pay online</h3>
+        <ul>
+          <li><a href="#">Aktia</a></li>
+          <li><a href="#">Handelsbanken</a></li>
+          <li><a href="#">Nordea</a></li>
+          <li><a href="#">Osuuspankki</a></li>
+          <li><a href="#">Sampo</a></li>
+          <li><a href="#">Tapiola</a></li>
+          <li><a href="#">Ålandsbanken</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
