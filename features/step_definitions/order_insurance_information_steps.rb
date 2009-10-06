@@ -17,6 +17,10 @@ Given /^I have given correct contact information$/ do
    
 end
 
+Given /^I have not given address$/ do
+  @browser.type('employer_address', '')
+end
+
 When /^I order the information package$/ do
   @browser.click 'employer_submit'
   @browser.wait_for_page_to_load(200)
@@ -30,3 +34,8 @@ Then /^the order is registered$/ do
   count = @db.get_first_value("select count(*) from employers where ssn = '#@ssn'" )
   count.to_i.should eql 1
 end
+
+Then /^I get an error message$/ do
+  @browser.is_element_present("errorExplanation").should be_true
+end
+
