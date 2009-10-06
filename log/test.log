@@ -1,0 +1,18 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mEmployer Create (0.3ms)[0m   [0;1mINSERT INTO "employers" ("address", "city", "created_at", "ssn", "postal_code", "updated_at", "last_name", "first_name") VALUES(NULL, NULL, '2009-10-06 14:54:34', NULL, NULL, '2009-10-06 14:54:34', NULL, NULL)[0m
+  [4;36;1mEmployer Create (0.3ms)[0m   [0;1mINSERT INTO "employers" ("address", "city", "created_at", "ssn", "postal_code", "updated_at", "last_name", "first_name") VALUES(NULL, NULL, '2009-10-06 15:11:28', NULL, NULL, '2009-10-06 15:11:28', NULL, 'Jaska')[0m
