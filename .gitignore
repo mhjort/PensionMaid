@@ -1,2 +1,1 @@
-log/development.log
-db/development.sqlite3
+test/fake_invoicing/log/development.log

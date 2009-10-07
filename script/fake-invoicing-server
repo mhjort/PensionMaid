@@ -1,0 +1,4 @@
+#!/bin/sh
+
+test/fake_invoicing/script/server -p 3001
+
