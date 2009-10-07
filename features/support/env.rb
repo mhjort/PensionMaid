@@ -31,6 +31,7 @@ end
 require 'cucumber/rails/rspec'
 require 'webrat/core/matchers'
 
+require 'sqlite3'
 require 'spec/expectations'
 require 'selenium'
 
@@ -38,8 +39,11 @@ require 'selenium'
 browser = Selenium::SeleniumDriver.new("localhost", 4444, "*firefox", "http://localhost", 15000)
  
 Before do
+  @db = SQLite3::Database.new( "db/development.sqlite3")
+  @db.execute("delete from employers")
   @browser = browser
   @browser.start
+  @browser.open('http://localhost:3000')
 end
  
 After do
