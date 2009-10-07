@@ -28,6 +28,10 @@ When /^I order the information package$/ do
   @browser.wait_for_page_to_load(200)
 end
 
+When /^I give salary of (.*) euros$/ do |salary|
+  @browser.type(salary)
+end
+
 When /^I order the invoice$/ do
   @browser.click 'invoice_submit'
   @browser.wait_for_page_to_load(200)
