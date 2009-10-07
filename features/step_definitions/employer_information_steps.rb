@@ -1,13 +1,5 @@
-require 'sqlite3'
-
-Before do
-  @db = SQLite3::Database.new( "db/development.sqlite3")
-  @db.execute("delete from employers")
-end
-
 Given /^I have given employer's data$/ do
   @ssn = '130579-088M'
-  @browser.open('http://localhost:3000')
   @browser.type('employer_first_name', 'Tiina') 
   @browser.type('employer_last_name', 'Kiuru') 
   @browser.type('employer_ssn', @ssn)
@@ -27,8 +19,17 @@ Given /^I have given employee's data$/ do
   @browser.type('employee_ssn', '132456-156N')
 end
 
+Given /^I have left employee's ssn blank$/ do
+  @browser.type('employee_ssn', '')
+end
+
 When /^I order the information package$/ do
   @browser.click 'employer_submit'
+  @browser.wait_for_page_to_load(200)
+end
+
+When /^I order the invoice$/ do
+  @browser.click 'invoice_submit'
   @browser.wait_for_page_to_load(200)
 end
 
