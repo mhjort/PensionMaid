@@ -12,4 +12,3 @@ Feature: Order insurance information
     When I order the information package
     Then I get an error message
 
-

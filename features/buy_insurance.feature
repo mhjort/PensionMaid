@@ -15,3 +15,10 @@ Feature: Buy insurance
     But I have left employee's ssn blank
     When I order the invoice
     Then I get an error message
+  
+  Scenario: Salary limit
+    Given I have given employer's data
+    And I have given employee's data
+    When I give salary of 7153 euros
+    And I order the invoice
+    Then I get an error message
