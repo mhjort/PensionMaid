@@ -1,0 +1,44 @@
+
+
+Processing InvoicesController#create to xml (for 127.0.0.1 at 2009-10-07 20:28:24) [POST]
+  Parameters: {"invoice"=>{"name"=>"Markus", "amount"=>9500}}
+
+TypeError (can't convert Fixnum into String):
+  app/controllers/invoices_controller.rb:10:in `+'
+  app/controllers/invoices_controller.rb:10:in `to_s'
+  app/controllers/invoices_controller.rb:27:in `puts'
+  app/controllers/invoices_controller.rb:27:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (69.3ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#create to xml (for 127.0.0.1 at 2009-10-07 20:29:26) [POST]
+  Parameters: {"invoice"=>{"name"=>"Markus", "amount"=>9500}}
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/invoices.xml]
+
+
+Processing InvoicesController#create to xml (for 127.0.0.1 at 2009-10-07 20:33:34) [POST]
+  Parameters: {"invoice"=>{"name"=>"Markus", "amount"=>9500}}
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/invoices.xml]
+
+
+Processing InvoicesController#create to xml (for 127.0.0.1 at 2009-10-07 20:33:56) [POST]
+  Parameters: {"invoice"=>{"name"=>"Markus", "amount"=>9500}}
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/invoices.xml]
+
+
+Processing InvoicesController#create to xml (for 127.0.0.1 at 2009-10-07 20:37:10) [POST]
+  Parameters: {"invoice"=>{"name"=>"Markus", "amount"=>9500}}
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/invoices.xml]

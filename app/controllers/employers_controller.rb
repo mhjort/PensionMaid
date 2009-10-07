@@ -1,26 +1,30 @@
+class Invoice < ActiveResource::Base
+  # TODO Update to production url
+  self.site = "http://localhost:3001"
+end
+
 class EmployersController < ApplicationController
-  # GET /employers
-  # GET /employers.xml
   def index
     @employer = Employer.new
-
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
+      format.xml { render:xml => @employer.to_xml }
     end
   end
 
-  # POST /employers
-  # POST /employers.xml
   def create
     @employer = Employer.new(params[:employer])
-
     respond_to do |format|
       if @employer.save
         flash[:notice] = 'Employer was successfully created.'
-        format.html { render :action => "index" }
-      else
-        format.html { render :action => "index" }
+        do_invoice
       end
+      format.html { render :action => "index" }
     end
+  end
+  
+  def do_invoice
+    invoice = Invoice.new(:name => "Markus", :amount => 9500)
+    invoice.save
   end
 end
