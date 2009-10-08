@@ -5,7 +5,7 @@ end
 
 Then /^the data is reported to billing system$/ do
   ret = RestClient.get 'http://localhost:3001/invoices/1.xml'
-  put ret
+  ret.should match '.*ok.*'
 end
 
 Then /^something happens$/ do
