@@ -1,1 +1,4 @@
-test/fake_invoicing/log/development.log
+log/development.log
+db/development.sqlite3
+log
+log/cucumber.log
