@@ -1,12 +1,5 @@
 Given /^I have given employer's data$/ do
-  @ssn = '130579-088M'
-  @browser.type('employer_first_name', 'Tiina') 
-  @browser.type('employer_last_name', 'Kiuru') 
-  @browser.type('employer_ssn', @ssn)
-  @browser.type('employer_address', 'Pengerkatu 9 A 9')
-  @browser.type('employer_postal_code', '00530')
-  @browser.type('employer_city', 'Helsinki')
-   
+  fill_employer_data 
 end
 
 Given /^I have not given address$/ do
@@ -14,13 +7,15 @@ Given /^I have not given address$/ do
 end
 
 Given /^I have given employee's data$/ do
-  @browser.type('employee_first_name', 'John')
-  @browser.type('employee_last_name', 'Smith')
-  @browser.type('employee_ssn', '132456-156N')
+  fill_employee_data
 end
 
 Given /^I have left employee's ssn blank$/ do
   @browser.type('employee_ssn', '')
+end
+
+Given /^I have given required data$/ do
+  fill_obligatory_fields
 end
 
 When /^I order the information package$/ do
@@ -50,3 +45,24 @@ Then /^I get an error message$/ do
   @browser.is_element_present("errorExplanation").should be_true
 end
 
+
+def fill_obligatory_fields()
+ fill_employer_data
+ fill_employee_data 
+end
+
+def fill_employer_data()
+  @ssn = '130579-088M'
+  @browser.type('employer_first_name', 'Tiina') 
+  @browser.type('employer_last_name', 'Kiuru') 
+  @browser.type('employer_ssn', @ssn)
+  @browser.type('employer_address', 'Pengerkatu 9 A 9')
+  @browser.type('employer_postal_code', '00530')
+  @browser.type('employer_city', 'Helsinki') 
+end
+
+def fillEmployeeData()
+  @browser.type('employee_first_name', 'John')
+  @browser.type('employee_last_name', 'Smith')
+  @browser.type('employee_ssn', '132456-156N')
+end
