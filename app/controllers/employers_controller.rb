@@ -25,6 +25,7 @@ class EmployersController < ApplicationController
   
   def do_invoice
     invoice = Invoice.new(:name => "Markus", :amount => 9500)
-    invoice.save
+    ret = invoice.save
+    puts invoice.id
   end
 end
