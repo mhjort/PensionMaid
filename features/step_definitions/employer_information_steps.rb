@@ -18,18 +18,26 @@ Given /^I have given required data$/ do
   fill_obligatory_fields
 end
 
+Given /^I have given salary of (.*) euros$/ do |salary| 
+  @browser.type('salary', salary)
+end
+
 When /^I order the information package$/ do
   @browser.click 'employer_submit'
-  @browser.wait_for_page_to_load(200)
+  @browser.wait_for_page_to_load(1000)
 end
 
 When /^I give salary of (.*) euros$/ do |salary|
-  @browser.type(salary)
+  @browser.type('salary', salary)
 end
 
 When /^I order the invoice$/ do
   @browser.click 'invoice_submit'
   @browser.wait_for_page_to_load(200)
+end
+
+When /^I give SSN (.*)$/ do |ssn|
+  @browser.type('ssn', ssn)
 end
 
 Then /^I get a confirmation message$/ do
@@ -45,6 +53,9 @@ Then /^I get an error message$/ do
   @browser.is_element_present("errorExplanation").should be_true
 end
 
+Then /^the employee's part is (.*) euros$/ do |expected_employee_part|
+  @browser.get_text('employee_part').should eql expected_employee_part
+end
 
 def fill_obligatory_fields()
  fill_employer_data
@@ -61,7 +72,7 @@ def fill_employer_data()
   @browser.type('employer_city', 'Helsinki') 
 end
 
-def fillEmployeeData()
+def fill_employee_data()
   @browser.type('employee_first_name', 'John')
   @browser.type('employee_last_name', 'Smith')
   @browser.type('employee_ssn', '132456-156N')
