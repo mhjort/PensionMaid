@@ -7,7 +7,11 @@
 
       <table border="0" cellspacing="0" cellpadding="0">
 	<% form_for(@employer) do |f| %>
-	<%= f.error_messages %>
+	<tr>
+	<th>
+        <%= f.error_messages %>
+        </th>
+        </tr>
         <tr>
           <th>The employer is</th>
           <td><input name="employerStatus" type="radio" id="employerStatusHouseHold" checked="checked" />
@@ -64,12 +68,6 @@
 	  <%= f.text_field :city %>
 	  </td>
         </tr>
-	<tr>
-	<th>
-	<%= f.submit "Order" %>
-	</th>
-	</rt>
-	<% end %>
       </table>
     </div>
   </div>
@@ -138,7 +136,9 @@
         <p>Timo Rissanen <br />
           Eurantie 12 B 44<br />
           00550 Helsinki</p>
-        <input type="submit" name="orderInvoice" id="orderInvoice" value="Order invoice" />
+	<%= f.submit "Order" %>
+        <!-- <input type="submit" name="orderInvoice" id="orderInvoice" value="Order invoice" /> -->
+	<% end %>
       </div>
       <div id="paymentDivider"> or </div>
       <div id="eBankLinks">

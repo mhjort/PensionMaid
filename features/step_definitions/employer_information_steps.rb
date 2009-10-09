@@ -32,9 +32,8 @@ When /^I give salary of (.*) euros$/ do |salary|
 end
 
 When /^I order the invoice$/ do
-  @browser.click 'orderInvoice'
-  #TODO Currently it does not do anything
-  #@browser.wait_for_page_to_load(200)
+  @browser.click 'employer_submit'
+  @browser.wait_for_page_to_load(200)
 end
 
 When /^I give SSN (.*)$/ do |ssn|
