@@ -11,7 +11,7 @@ Given /^I have given employee's data$/ do
 end
 
 Given /^I have left employee's ssn blank$/ do
-  @browser.type('employee_ssn', '')
+  @browser.type('employer_employees_attributes_0_ssn', '')
 end
 
 Given /^I have given required data$/ do
@@ -37,7 +37,7 @@ When /^I order the invoice$/ do
 end
 
 When /^I give SSN (.*)$/ do |ssn|
-  @browser.type('employee_ssn', ssn)
+  @browser.type('employer_employees_attributes_0_ssn', ssn)
 end
 
 Then /^I get a confirmation message$/ do
@@ -74,7 +74,7 @@ def fill_employer_data()
 end
 
 def fill_employee_data()
-  @browser.type('employee_first_name', 'John')
-  @browser.type('employee_last_name', 'Smith')
-  @browser.type('employee_ssn', '132456-156N')
+  @browser.type('employer_employees_attributes_0_first_name', 'John')
+  @browser.type('employer_employees_attributes_0_last_name', 'Smith')
+  @browser.type('employer_employees_attributes_0_ssn', '132456-156N')
 end
