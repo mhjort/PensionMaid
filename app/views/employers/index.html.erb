@@ -6,7 +6,8 @@
 
 
       <table border="0" cellspacing="0" cellpadding="0">
-	<% form_for(@employer) do |f| %>
+	<% @employer.employees.build if @employer.employees.empty? %> 
+        <% form_for(@employer) do |f| %>
 	<tr>
 	<th>
         <%= f.error_messages %>
@@ -89,6 +90,7 @@
       <option>October 2008</option>
     </select>
     <table border="0" cellspacing="0" cellpadding="0">
+       <% f.fields_for :employees do |employee_form| %> 
       <tr>
         <th scope="col">Firstname</th>
         <th scope="col">Lastname</th>
@@ -98,9 +100,18 @@
         <th class="calculatedAmount" scope="col"><em>Employee's share of the pension insurance</em></th>
       </tr>
       <tr>
-        <td><input type="text" id="employee_first_name"/></td>
-        <td><input type="text" id="employee_last_name"/></td>
-        <td><input type="text" id="employee_ssn"/></td>
+        <td>
+	<!-- <input type="text" id="employee_first_name"/> -->
+ 	<%= employee_form.text_field :first_name %>
+	</td>
+        <td>
+	<!-- <input type="text" id="employee_last_name"/> -->
+ 	<%= employee_form.text_field :last_name %>
+	</td>
+        <td>
+	<!-- <input type="text" id="employee_ssn"/> -->
+	<%= employee_form.text_field :ssn %>
+	</td>
         <td class="salary"><input type="text" id="employee_salary" value="9500" /></td>
         <td class="calculatedAmount"><strong>2128,00€</strong></td>
         <td class="calculatedAmount"><em><span id="employee_part">91,50€</span></em></td>
@@ -121,6 +132,7 @@
         <td class="calculatedAmount"><div>2128,00€</div></td>
         <td class="calculatedAmount">&nbsp;</td>
       </tr>
+      <% end %>
     </table>
   </div>
   <div id="payment">
