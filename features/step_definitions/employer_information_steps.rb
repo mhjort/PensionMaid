@@ -19,7 +19,7 @@ Given /^I have given required data$/ do
 end
 
 Given /^I have given salary of (.*) euros$/ do |salary| 
-  @browser.type('employee_salary', salary)
+  @browser.type('employer_employees_attributes_0_salary', salary)
 end
 
 When /^I order the information package$/ do
@@ -28,7 +28,7 @@ When /^I order the information package$/ do
 end
 
 When /^I give salary of (.*) euros$/ do |salary|
-  @browser.type('employee_salary', salary)
+  @browser.type('employer_employees_attributes_0_salary', salary)
 end
 
 When /^I order the invoice$/ do
