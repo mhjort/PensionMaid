@@ -1,3 +1,4 @@
+@buying
 @wip
 Feature: Buy insurance
 
