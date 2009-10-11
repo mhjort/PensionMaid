@@ -8,6 +8,3 @@ Then /^the data is reported to billing system$/ do
   ret.should match '.*ok.*'
 end
 
-Then /^something happens$/ do
-end
-

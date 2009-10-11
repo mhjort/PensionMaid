@@ -33,7 +33,7 @@ end
 
 When /^I order the invoice$/ do
   @browser.click 'employer_submit'
-  @browser.wait_for_page_to_load(200)
+  @browser.wait_for_page_to_load(2000)
 end
 
 When /^I give SSN (.*)$/ do |ssn|
