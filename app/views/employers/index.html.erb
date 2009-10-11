@@ -1,3 +1,13 @@
+<script type="text/javascript">
+$(function() {
+  $('#calculated_amount').hide();
+  $('#employer_employees_attributes_0_salary').bind('change', function(event) {
+    amount = Math.round($(this).val() * 0.224 * 100) / 100;
+    $('#calculated_amount').text(amount.toFixed(2) + ' €');
+    $('#calculated_amount').show();
+  });
+});
+</script>
 <div id="contentContainer">
   <h1>Pension Insurance calculator</h1>
   <div id="contactInfo">
@@ -112,8 +122,11 @@
 	<!-- <input type="text" id="employee_ssn"/> -->
 	<%= employee_form.text_field :ssn %>
 	</td>
-        <td class="salary"><input type="text" id="employee_salary" value="9500" /></td>
-        <td class="calculatedAmount"><strong>2128,00€</strong></td>
+        <td class="salary">
+	<!-- <input type="text" id="employee_salary" value="9500" /> -->
+	<%= employee_form.text_field :salary %>
+	</td>
+        <td class="calculatedAmount"><strong><span id="calculated_amount">2128,00€</span></strong></td>
         <td class="calculatedAmount"><em><span id="employee_part">91,50€</span></em></td>
       </tr>
       <tr>
