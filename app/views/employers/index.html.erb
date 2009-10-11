@@ -1,11 +1,14 @@
 <script type="text/javascript">
 $(function() {
-  $('#calculated_amount').hide();
-  $('#employer_employees_attributes_0_salary').bind('change', function(event) {
+  function updateAmount() {
     amount = Math.round($(this).val() * 0.224 * 100) / 100;
     $('#calculated_amount').text(amount.toFixed(2) + ' €');
     $('#calculated_amount').show();
-  });
+  }
+ 
+  $('#calculated_amount').hide();
+  $('#employer_employees_attributes_0_salary').bind('change', updateAmount);
+  $('#employer_employees_attributes_0_salary').bind('keyup', updateAmount);
 });
 </script>
 <div id="contentContainer">
