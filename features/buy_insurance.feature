@@ -8,8 +8,8 @@ Feature: Buy insurance
     And I have given the month and year of employment
     When I order the invoice
     Then I get a confirmation message
-    And the data is reported to billing system
     And the order is registered
+    And the data is reported to billing system
 
   Scenario: Obligatory fields
     Given I have given required data

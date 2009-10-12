@@ -19,6 +19,9 @@ end
 
 Then /^I get a confirmation message$/ do
   @browser.is_element_present('orderStatus').should be_true
+  confirmation_message = @browser.get_text('orderStatus')
+  @agreement_id = confirmation_message.scan(/\d+/)[0]
+  puts @agreement_id
 end
 
 Then /^the order is registered$/ do
@@ -31,7 +34,7 @@ Then /^I get an error message$/ do
 end
 
 Then /^the data is reported to billing system$/ do
-  ret = RestClient.get 'http://localhost:3001/invoices/1.xml'
+  ret = RestClient.get "http://localhost:3001/invoices/#{@agreement_id}.xml"
   ret.should match '.*ok.*'
 end
 
