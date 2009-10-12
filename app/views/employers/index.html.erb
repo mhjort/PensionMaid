@@ -2,11 +2,9 @@
 $(function() {
   function updateAmount() {
     amount = Math.round($(this).val() * 0.224 * 100) / 100;
-    $('#calculated_amount').text(amount.toFixed(2) + ' €');
-    $('#calculated_amount').show();
+    amountString = amount.toFixed(2) + ' €';
+    $('#calculated_amount_td').html('<strong><span id="calculated_amount">' + amountString + '</span></strong>');
   }
- 
-  $('#calculated_amount').hide();
   $('#employer_employees_attributes_0_salary').bind('change', updateAmount);
   $('#employer_employees_attributes_0_salary').bind('keyup', updateAmount);
 });
@@ -124,7 +122,7 @@ $(function() {
 	<!-- <input type="text" id="employee_salary" value="9500" /> -->
 	<%= employee_form.text_field :salary %>
 	</td>
-        <td class="calculatedAmount"><strong><span id="calculated_amount">2128,00€</span></strong></td>
+        <td class="calculatedAmount" id="calculated_amount_td"></td>
         <td class="calculatedAmount"><em><span id="employee_part">91,50€</span></em></td>
       </tr>
       <tr>
