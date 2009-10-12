@@ -17,15 +17,18 @@ class EmployersController < ApplicationController
     respond_to do |format|
       if @employer.save
         flash[:notice] = 'Employer was successfully created.'
-        do_invoice
+        do_invoice @employer
       end
       format.html { render :action => "index" }
     end
   end
   
-  def do_invoice
-    invoice = Invoice.new(:name => "Markus", :amount => 9500)
+  def do_invoice(e)
+    invoice = Invoice.new(:name => e.first_name + " " + e.last_name, 
+			  :address => e.address + ", " + e.postal_code + " " + e.city, 
+			  :month => "Elokuu2009",
+			  :type => "Tilapäinen työnantaja",
+			  :amount => e.employees[0].salary * 0.224);
     ret = invoice.save
-    puts invoice.id
   end
 end
