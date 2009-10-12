@@ -21,11 +21,6 @@ $(function() {
       <table border="0" cellspacing="0" cellpadding="0">
 	<% @employer.employees.build if @employer.employees.empty? %> 
         <% form_for(@employer) do |f| %>
-	<tr>
-	<th>
-        <%= f.error_messages %>
-        </th>
-        </tr>
         <tr>
           <th>The employer is</th>
           <td><input name="employerStatus" type="radio" id="employerStatusHouseHold" checked="checked" />
@@ -158,6 +153,10 @@ $(function() {
       Send a breakdown of the pension insurance payments to email address
       <input type="text" class="long" value="timo.rissanen@gmail.com" />
     </p>
+    <% if flash[:notice] %>
+         <div id="orderStatus"><%= flash[:notice] %></div>
+    <% end %> 
+    <%= f.error_messages %>
     <div id="paymentOptions">
       <div id="snailMail">
         <h3>Order a printed invoice to address</h3>

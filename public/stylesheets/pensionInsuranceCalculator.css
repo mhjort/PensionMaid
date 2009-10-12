@@ -153,3 +153,20 @@ input:focus {
 	text-decoration: none;
 	color: #2D60C6;
 }
+#errorExplanation {
+  background:#FED1CC;
+  padding:8px;
+  margin-bottom:5px;
+  float:left;
+  clear: both;
+}
+#orderStatus {
+  background: #CCFFCC;
+  border: 2px solid green;
+  color: green;
+  float: left;
+  font-size: 2em;
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+
