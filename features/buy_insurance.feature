@@ -23,7 +23,3 @@ Feature: Buy insurance
     And I order the invoice
     Then I get an error message
 
-  Scenario: Month cannot be in future
-    Given I have given required data
-    When I order the invoice
-    Then something happens

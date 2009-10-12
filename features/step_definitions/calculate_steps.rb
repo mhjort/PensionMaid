@@ -7,4 +7,3 @@ end
 Then /^I am informed about too high salary$/ do
   pending
 end
-
