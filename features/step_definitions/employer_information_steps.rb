@@ -41,8 +41,7 @@ When /^I give SSN (.*)$/ do |ssn|
 end
 
 Then /^I get a confirmation message$/ do
-  # TODO Currently not working
-  #@browser.is_text_present("Employer was successfully created.").should be_true
+  @browser.is_element_present('orderStatus').should be_true
 end
 
 Then /^the order is registered$/ do
