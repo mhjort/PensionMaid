@@ -1,16 +1,12 @@
 <script type="text/javascript">
 $(function() {
-  function isPositiveNumber(sText) {
-     var ValidChars = "0123456789.";
-     var IsNumber=true;
-     var Char;
-     for (i = 0; i < sText.length && IsNumber == true; i++) { 
-       Char = sText.charAt(i); 
-       if (ValidChars.indexOf(Char) == -1) {
-         IsNumber = false;
-       }
+  function isPositiveNumber(text) {
+     if (text == '') return false;
+     var validChars = "0123456789.";
+     for (i = 0; i < text.length; i++) { 
+       if (validChars.indexOf(text.charAt(i)) == -1) return false;
     }
-    return IsNumber;
+    return true;
   }  
   function updateAmount() {
     salary = $(this).val();
@@ -29,6 +25,7 @@ $(function() {
     }
   }
   
+  updateAmount();
   $('#employer_employees_attributes_0_salary').bind('change', updateAmount);
   $('#employer_employees_attributes_0_salary').bind('keyup', updateAmount);
 });
