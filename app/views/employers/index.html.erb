@@ -13,10 +13,14 @@ $(function() {
     return IsNumber;
   }  
   function updateAmount() {
-    if (isPositiveNumber($(this).val())) {
-      amount = Math.round($(this).val() * 0.224 * 100) / 100;
-      amountString = amount.toFixed(2) + ' €';
-      $('#calculated_amount_td').html('<strong><span id="calculated_amount">' + amountString + '</span></strong>');
+    salary = $(this).val();
+    if (isPositiveNumber(salary)) {
+      if (salary <= 7153) {
+        amount = (Math.round(salary * 0.224 * 100) / 100).toFixed(2);
+        $('#calculated_amount_td').html('<strong><span id="calculated_amount">' + amount + ' €</span></strong>');
+      } else {
+        $('#calculated_amount_td').html('<strong><span id="high_salary_notice">Too high salary</span></strong>');
+      }
     } else {
       $('#calculated_amount_td').html('<span id="errorExplanation">Invalid salary</span>');
     }
