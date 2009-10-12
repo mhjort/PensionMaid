@@ -1,3 +1,4 @@
+@information
 Feature: Order insurance information
 
   Scenario: Basic case

@@ -76,6 +76,7 @@ def fill_employee_data()
   @browser.type('employer_employees_attributes_0_first_name', 'John')
   @browser.type('employer_employees_attributes_0_last_name', 'Smith')
   type_employee_ssn('121267-178N')
+  type_salary(1000)
 end
 
 def type_employee_ssn(ssn)
