@@ -16,8 +16,8 @@ class EmployersController < ApplicationController
     @employer = Employer.new(params[:employer])
     respond_to do |format|
       if @employer.save
-        flash[:notice] = 'Employer was successfully created.'
-        do_invoice @employer
+        invoice = do_invoice @employer
+        flash[:notice] = 'Order with id ' + invoice.id + ' was successfully created.'
       end
       format.html { render :action => "index" }
     end
@@ -30,5 +30,6 @@ class EmployersController < ApplicationController
 			  :type => "Tilapäinen työnantaja",
 			  :amount => e.employees[0].salary * 0.224);
     ret = invoice.save
+    invoice
   end
 end

@@ -7,15 +7,19 @@ $(function() {
        if (validChars.indexOf(text.charAt(i)) == -1) return false;
     }
     return true;
-  }  
-  function updateAmount() {
+  } 
+   
+  function updateAmounts() {
     salary = $(this).val();
     if (isPositiveNumber(salary)) {
       if (salary <= 7152) {
         amount = (Math.round(salary * 0.224 * 100) / 100).toFixed(2);
+        employeePart = (Math.round(salary * 0.14 * 100) / 100).toFixed(2);
         $('#calculated_amount_td').html('<strong><span id="calculated_amount">' + amount + ' €</span></strong>');
+        $('#calculated_employee_part_td').html('<em><span id="employee_part">' + employeePart + ' €</span></em>');
         $('#employer_submit').enable()
-      } else {
+      
+     } else {
         $('#calculated_amount_td').html('<strong><span id="high_salary_notice">Too high salary</span></strong>');
         $('#employer_submit').disable()
       }
@@ -25,9 +29,9 @@ $(function() {
     }
   }
   
-  updateAmount();
-  $('#employer_employees_attributes_0_salary').bind('change', updateAmount);
-  $('#employer_employees_attributes_0_salary').bind('keyup', updateAmount);
+  updateAmounts();
+  $('#employer_employees_attributes_0_salary').bind('change', updateAmounts);
+  $('#employer_employees_attributes_0_salary').bind('keyup', updateAmounts);
 });
 </script>
 <div id="contentContainer">
@@ -144,7 +148,7 @@ $(function() {
 	<%= employee_form.text_field :salary %>
 	</td>
         <td class="calculatedAmount" id="calculated_amount_td"></td>
-        <td class="calculatedAmount"><em><span id="employee_part">91,50€</span></em></td>
+        <td class="calculatedAmount" id="calculated_employee_part_td"></td>
       </tr>
       <tr>
         <td><input type="text" /></td>
