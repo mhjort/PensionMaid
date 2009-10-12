@@ -1,10 +1,27 @@
 <script type="text/javascript">
 $(function() {
+  function isPositiveNumber(sText) {
+     var ValidChars = "0123456789.";
+     var IsNumber=true;
+     var Char;
+     for (i = 0; i < sText.length && IsNumber == true; i++) { 
+       Char = sText.charAt(i); 
+       if (ValidChars.indexOf(Char) == -1) {
+         IsNumber = false;
+       }
+    }
+    return IsNumber;
+  }  
   function updateAmount() {
-    amount = Math.round($(this).val() * 0.224 * 100) / 100;
-    amountString = amount.toFixed(2) + ' €';
-    $('#calculated_amount_td').html('<strong><span id="calculated_amount">' + amountString + '</span></strong>');
+    if (isPositiveNumber($(this).val())) {
+      amount = Math.round($(this).val() * 0.224 * 100) / 100;
+      amountString = amount.toFixed(2) + ' €';
+      $('#calculated_amount_td').html('<strong><span id="calculated_amount">' + amountString + '</span></strong>');
+    } else {
+      $('#calculated_amount_td').html('<span id="errorExplanation">Invalid salary</span>');
+    }
   }
+  
   $('#employer_employees_attributes_0_salary').bind('change', updateAmount);
   $('#employer_employees_attributes_0_salary').bind('keyup', updateAmount);
 });
