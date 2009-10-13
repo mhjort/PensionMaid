@@ -38,6 +38,11 @@ Then /^the data is reported to billing system$/ do
   ret.should match '.*ok.*'
 end
 
+Then /^ordering is not possible$/ do
+  @browser.is_element_present('//input[@disabled=""]').should be_true
+end
+
+
 def fill_obligatory_fields()
  fill_employer_data
  fill_employee_data 

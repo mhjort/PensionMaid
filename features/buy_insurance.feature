@@ -20,6 +20,6 @@ Feature: Buy insurance
   Scenario: Salary limit
     Given I have given required data
     When I give salary of 7153 euros
-    And I order the invoice
-    Then I get an error message
+    Then I am informed about too high salary
+    And ordering is not possible
 
