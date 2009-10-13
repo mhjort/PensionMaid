@@ -8,6 +8,6 @@ Then /^I am informed about too high salary$/ do
 end
 
 Then /^the employee's part is (.*) euros$/ do |expected_employee_part|
-  @browser.get_text('employee_part').should eql expected_employee_part
+  @browser.get_text('employee_part').should eql expected_employee_part + '.00 €'
 end
 
