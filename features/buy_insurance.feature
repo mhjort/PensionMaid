@@ -1,5 +1,4 @@
 @buying
-@wip
 Feature: Buy insurance
 
   Scenario: Basic case
