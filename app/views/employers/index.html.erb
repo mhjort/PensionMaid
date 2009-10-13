@@ -7,34 +7,48 @@ $(function() {
        if (validChars.indexOf(text.charAt(i)) == -1) return false;
     }
     return true;
+  }
+  function calculatePercent(amount, percent) {
+    return (Math.round(amount * percent * 100) / 100).toFixed(2);
+  }
+  function parseYear(ssn) {
+    return parseInt(19 + ssn.substr(4, 2));
   } 
-   
-  function updateAmounts() {
-    salary = $(this).val();
+  function updateAmount() {
+    salary = $('#employer_employees_attributes_0_salary').val();
     if (isPositiveNumber(salary)) {
       if (salary <= 7152) {
-        amount = (Math.round(salary * 0.224 * 100) / 100).toFixed(2);
-        //4.3 % for younger people, 5.4% for 54 year old guys
-	employeePart = (Math.round(salary * 0.054 * 100) / 100).toFixed(2);
-        $('#calculated_amount_td').html('<strong><span id="calculated_amount">' + amount + ' €</span></strong>');
-        $('#calculated_employee_part_td').html('<em><span id="employee_part">' + employeePart + ' €</span></em>');
+        $('#calculated_amount_td').html(
+	  '<strong><span id="calculated_amount">' + calculatePercent(salary, 0.224) + ' €</span></strong>');
         $('#employer_submit').enable();
       
      } else {
         $('#calculated_amount_td').html('<strong><span id="high_salary_notice">Too high salary</span></strong>');
-        $('#calculated_employee_part_td').html('');
 	$('#employer_submit').disable();
       }
     } else {
       $('#calculated_amount_td').html('<span id="errorExplanation">Invalid salary</span>');
-      $('#calculated_employee_part_td').html('');
       $('#employer_submit').disable();
     }
   }
-  
-  updateAmounts();
-  $('#employer_employees_attributes_0_salary').bind('change', updateAmounts);
-  $('#employer_employees_attributes_0_salary').bind('keyup', updateAmounts);
+  function updateEmployeePart() {
+    salary = $('#employer_employees_attributes_0_salary').val();
+    if (isPositiveNumber(salary) && salary <= 7152) {
+        age = new Date().getFullYear() - parseYear($('#employer_employees_attributes_0_ssn').val());
+        employeePartPercent = age >= 53 ? 0.054 : 0.043;
+        $('#calculated_employee_part_td').html(
+	  '<em><span id="employee_part">' + calculatePercent(salary, employeePartPercent) + ' €</span></em>');
+    } else {
+      $('#calculated_employee_part_td').html('');
+    }
+  }
+  updateAmount();
+  updateEmployeePart();
+  $('#employer_employees_attributes_0_salary')
+    .bind('change', updateAmount).bind('change', updateEmployeePart)
+    .bind('keyup', updateAmount).bind('keyup', updateEmployeePart);
+  $('#employer_employees_attributes_0_ssn')
+    .bind('change', updateEmployeePart).bind('keyup', updateEmployeePart);
 });
 </script>
 <div id="contentContainer">
