@@ -118,7 +118,7 @@ input:focus {
 #payment #snailMail, #payment #errorExplanation {
 	width: 170px;
 	padding: 20px;
-	height: 230px;
+	height: 200px;
 	background: #d1dae5;
 	-moz-border-radius: 5px;
 }

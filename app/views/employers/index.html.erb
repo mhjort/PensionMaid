@@ -60,14 +60,6 @@ $(function() {
 
 	<% @employer.employees.build if @employer.employees.empty? %> 
         <% form_for(@employer) do |f| %>
-         <tr>
-          <th>The employer is</th>
-          <td><input name="employerStatus" type="radio" id="employerStatusHouseHold" checked="checked" />
-            <label for="employerStatusHouseHold">a household</label>
-            <br />
-            <input type="radio" name="employerStatus" id="employerStatusCompany"  />
-            <label for="employerStatusCompany">a company </label></td>
-        </tr>
         <tr>
           <th><!-- <label for="employerFirstName">Firstname</label> -->
 	  <%= f.label :first_name %>
@@ -105,7 +97,7 @@ $(function() {
 	    <%= f.label :postal_code %>
 	  </th> 
           <td><!-- <input name="employerPostalCode" type="text" class="short" id="employerPostalCode" value="00550"/> -->
-	  <%= f.text_field :postal_code %>
+	  <%= f.text_field :postal_code, :class => 'short'%>
 	  </td>
         </tr>
         <tr>
@@ -161,7 +153,7 @@ $(function() {
   </div>
   <div id="payment">
     <h2>Payment</h2>
-    <%= f.error_messages %>
+    <%= f.error_messages :header_message => "Please fill the form.", :message => "" %>
 
  <div id="paymentOptions">
       <div id="snailMail">
