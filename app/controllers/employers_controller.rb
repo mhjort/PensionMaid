@@ -26,7 +26,7 @@ class EmployersController < ApplicationController
   def do_invoice(e)
     invoice = Invoice.new(:name => e.first_name + " " + e.last_name, 
 			  :address => e.address + ", " + e.postal_code + " " + e.city, 
-			  :month => "Elokuu2009",
+			  :month => e.month,
 			  :type => "Tilapäinen työnantaja",
 			  :amount => e.employees[0].salary * 0.224);
     ret = invoice.save
