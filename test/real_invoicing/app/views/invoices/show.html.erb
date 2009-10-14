@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @invoice.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @invoice.address %>
+</p>
+
+<p>
+  <b>Month:</b>
+  <%=h @invoice.month %>
+</p>
+
+<p>
+  <b>Insurance type:</b>
+  <%=h @invoice.insurance_type %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%=h @invoice.amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>

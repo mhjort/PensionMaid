@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  address: 
+  month: MyString
+  type: MyString
+  amount: 9.99
+
+two:
+  name: MyString
+  address: 
+  month: MyString
+  type: MyString
+  amount: 9.99
