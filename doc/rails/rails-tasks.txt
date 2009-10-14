@@ -1,1 +1,5 @@
 script/generate migration AddPartNumberToProducts part_number:string 
+
+script/generate scaffold Invoice name:string address:test month:string type:string amount:decimal 
+
+
