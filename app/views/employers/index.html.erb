@@ -56,18 +56,17 @@ $(function() {
   <div id="contactInfo">
     <div id="employerInfo">
       <h2>Employer</h2>
-
-
       <table border="0" cellspacing="0" cellpadding="0">
+
 	<% @employer.employees.build if @employer.employees.empty? %> 
         <% form_for(@employer) do |f| %>
-        <tr>
+         <tr>
           <th>The employer is</th>
           <td><input name="employerStatus" type="radio" id="employerStatusHouseHold" checked="checked" />
             <label for="employerStatusHouseHold">a household</label>
             <br />
             <input type="radio" name="employerStatus" id="employerStatusCompany"  />
-	    <label for="employerStatusCompany">a company </label></td>
+            <label for="employerStatusCompany">a company </label></td>
         </tr>
         <tr>
           <th><!-- <label for="employerFirstName">Firstname</label> -->
@@ -117,7 +116,7 @@ $(function() {
 	  <%= f.text_field :city %>
 	  </td>
         </tr>
-      </table>
+       </table>
     </div>
   </div>
   <div id="pensionInfo">
@@ -157,58 +156,25 @@ $(function() {
         <td class="calculatedAmount" id="calculated_amount_td"></td>
         <td class="calculatedAmount" id="calculated_employee_part_td"></td>
       </tr>
-      <tr>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-        <td class="salary"><input type="text" /></td>
-        <td class="calculatedAmount">&nbsp;</td>
-        <td class="calculatedAmount">&nbsp;</td>
-      </tr>
-      <tr id="totalRow">
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td class="salary">&nbsp;</td>
-        <td class="calculatedAmount"><div>2128,00€</div></td>
-        <td class="calculatedAmount">&nbsp;</td>
-      </tr>
       <% end %>
     </table>
   </div>
   <div id="payment">
     <h2>Payment</h2>
-    <p>
-      <input name="checkbox" type="checkbox" id="checkbox" checked="checked" />
-      Send a breakdown of the pension insurance payments to email address
-      <input type="text" class="long" value="timo.rissanen@gmail.com" />
-    </p>
-    <% if flash[:notice] %>
-         <div id="orderStatus"><%= flash[:notice] %></div>
-    <% end %> 
+        <% if flash[:notice] %>
+	  <div id="orderStatus"><%= flash[:notice] %></div>
+	<% end %> 
     <%= f.error_messages %>
-    <div id="paymentOptions">
+
+ <div id="paymentOptions">
       <div id="snailMail">
         <h3>Order a printed invoice to address</h3>
         <p>Timo Rissanen <br />
           Eurantie 12 B 44<br />
           00550 Helsinki</p>
-	<%= f.submit "Order" %>
+        <%= f.submit "Order" %>
         <!-- <input type="submit" name="orderInvoice" id="orderInvoice" value="Order invoice" /> -->
 	<% end %>
-      </div>
-      <div id="paymentDivider"> or </div>
-      <div id="eBankLinks">
-        <h3>Pay online</h3>
-        <ul>
-          <li><a href="#">Aktia</a></li>
-          <li><a href="#">Handelsbanken</a></li>
-          <li><a href="#">Nordea</a></li>
-          <li><a href="#">Osuuspankki</a></li>
-          <li><a href="#">Sampo</a></li>
-          <li><a href="#">Tapiola</a></li>
-          <li><a href="#">Ålandsbanken</a></li>
-        </ul>
       </div>
     </div>
   </div>
