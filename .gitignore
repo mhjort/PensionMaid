@@ -5,3 +5,4 @@ log/cucumber.log
 db/test.sqlite3
 log/last_created_invoice_id
 test/real_invoicing/log/
+test/real_invoicing/db/development.sqlite3
