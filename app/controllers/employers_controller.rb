@@ -17,7 +17,7 @@ class EmployersController < ApplicationController
     respond_to do |format|
       if @employer.save
         invoice = do_invoice @employer
-        flash[:notice] = 'Order with id ' + invoice.id + ' was successfully created.'
+        flash[:notice] = 'Order with id ' + invoice.id.to_s + ' was successfully created.'
       end
       format.html { render :action => "index" }
     end
@@ -27,7 +27,7 @@ class EmployersController < ApplicationController
     invoice = Invoice.new(:name => e.first_name + " " + e.last_name, 
 			  :address => e.address + ", " + e.postal_code + " " + e.city, 
 			  :month => e.month,
-			  :type => "Tilapäinen työnantaja",
+			  :insurance_type => "Temporary employer",
 			  :amount => e.employees[0].salary * 0.224);
     ret = invoice.save
     invoice

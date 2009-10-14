@@ -1,5 +1,5 @@
 #!/bin/sh
 
-curl -X POST -H "Accept: text/xml" -H "Content-type: application/xml" -d "<?xml version ='1.0' encoding 'UTF-8'?><invoice><name>Markus</name><amount>9500</amount></invoice>" http://localhost:3001/invoices.xml
+curl -X POST -H "Accept: text/xml" -H "Content-type: application/xml" -d "<?xml version ='1.0' encoding 'UTF-8'?><invoice><name>Markus</name><address>Katu</address><month>Month</month><insurance_type>Type</insurance_type><amount>9500</amount></invoice>" http://localhost:$1/invoices.xml
 
 

@@ -26,10 +26,10 @@ class InvoicesController < ApplicationController
 
   def create
     invoice_params =  params[:invoice]
-    invoice_id = Time.now.strftime("%y%m%d%H%M%S")
+    invoice_id = Time.now.strftime("%H%M%S").to_i
     File.open('log/last_created_invoice_id', 'w') { |file| file.write(invoice_id)}
     respond_to do |format|
-      format.xml  { render :xml => "<?xml version ='1.0' encoding='UTF-8'?><invoice><id>#{invoice_id}</id></invoice>" }
+      format.xml  { render :xml => "<?xml version ='1.0' encoding='UTF-8'?><invoice><id type=\"integer\">#{invoice_id}</id></invoice>" }
     end
   end
 end                    
