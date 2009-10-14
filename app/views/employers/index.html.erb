@@ -123,20 +123,10 @@ $(function() {
   <div id="pensionInfo">
     <h2>Employees and pension insurance payments</h2>
     <label for="salaryMonth">Salary month</label>
-    <select name="salaryMonth" id="salaryMonth">
-      <option>September 2009</option>
-      <option>August 2009</option>
-      <option>July 2009</option>
-      <option>June 2009</option>
-      <option>May 2009</option>
-      <option>April 2009</option>
-      <option>March 2009</option>
-      <option>February 2009</option>
-      <option>January 2009</option>
-      <option>December 2008</option>
-      <option>November 2008</option>
-      <option>October 2008</option>
-    </select>
+   <%= f.select :month, 
+     options_for_select(['October 2009', 'September 2009', 'July 2009', 'June 2009', 'May 2009',
+                         'April 2009', 'March 2009', 'February 2009', 'January 2009', 'December 2008',
+			 'November 2008', 'October 2008i']) %>
     <table border="0" cellspacing="0" cellpadding="0">
        <% f.fields_for :employees do |employee_form| %> 
       <tr>
