@@ -1,0 +1,4 @@
+#!/bin/sh
+
+test/real_invoicing/script/server -p 3002
+
