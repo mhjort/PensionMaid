@@ -118,7 +118,7 @@ input:focus {
 #payment #snailMail, #payment #errorExplanation {
 	width: 170px;
 	padding: 20px;
-	height: 130px;
+	height: 230px;
 	background: #d1dae5;
 	-moz-border-radius: 5px;
 }
@@ -131,4 +131,13 @@ input:focus {
 }
 #payment #errorExplanation li a {
 }
+#orderStatus {
+  background: #CCFFCC;
+  border: 2px solid green;
+  color: green;
+  float: center;
+  font-size: 1em;
+  margin: 0.5em 0;
+  padding: 0.5em;
 }
+

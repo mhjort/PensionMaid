@@ -161,9 +161,6 @@ $(function() {
   </div>
   <div id="payment">
     <h2>Payment</h2>
-        <% if flash[:notice] %>
-	  <div id="orderStatus"><%= flash[:notice] %></div>
-	<% end %> 
     <%= f.error_messages %>
 
  <div id="paymentOptions">
@@ -177,5 +174,8 @@ $(function() {
 	<% end %>
       </div>
     </div>
+        <% if flash[:notice] %>
+	  <div id="orderStatus"><%= flash[:notice] %></div>
+	<% end %> 
   </div>
 </div>
