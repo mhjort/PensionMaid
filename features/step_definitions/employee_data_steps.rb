@@ -10,6 +10,14 @@ Given /^I have given salary of (.*) euros$/ do |salary|
   type_salary(salary)
 end
 
+Given /^I have given SSN (.*)$/ do |ssn|
+  type_employee_ssn(ssn)
+end
+
+Given /^I have not given the SSN of the employee$/ do
+  type_employee_ssn('')
+end
+
 When /^I give salary of (.*) euros$/ do |salary|
   type_salary(salary)
 end
