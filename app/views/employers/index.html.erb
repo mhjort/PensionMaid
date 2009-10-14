@@ -8,11 +8,23 @@ $(function() {
     }
     return true;
   }
+  function isValidSsn(ssn) {
+    if (ssn.length != 11) return false;
+    if (parseDay(ssn) < 1 || parseDay(ssn) > 31) return false;
+    if (parseMonth(ssn) < 1 || parseMonth(ssn) > 12) return false;
+    return true; 
+  }
   function calculatePercent(amount, percent) {
     return (Math.round(amount * percent * 100) / 100).toFixed(2);
   }
+  function parseDay(ssn) {
+    return parseInt(ssn.substr(0, 2), 10);
+  }
+  function parseMonth(ssn) {
+    return parseInt(ssn.substr(2, 2), 10);
+  }
   function parseYear(ssn) {
-    return parseInt(19 + ssn.substr(4, 2));
+    return parseInt(19 + ssn.substr(4, 2), 10);
   } 
   function updateAmount() {
     salary = $('#employer_employees_attributes_0_salary').val();
@@ -33,7 +45,13 @@ $(function() {
   }
   function updateEmployeePart() {
     salary = $('#employer_employees_attributes_0_salary').val();
-    if (isPositiveNumber(salary) && salary <= 7152) {
+    ssn = $('#employer_employees_attributes_0_ssn').val();
+    if (!isValidSsn(ssn)) {
+        $('#calculated_employee_part_td').html(
+	  '<em><span id="invalid_ssn_notice" class="errorExplanation">SSN invalid</span></em>');
+      return;
+    }
+    if (isValidSsn(ssn) && isPositiveNumber(salary) && salary <= 7152) {
         age = new Date().getFullYear() - parseYear($('#employer_employees_attributes_0_ssn').val());
         employeePartPercent = age >= 53 ? 0.054 : 0.043;
         $('#calculated_employee_part_td').html(

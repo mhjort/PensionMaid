@@ -1,5 +1,4 @@
 @employee
-@wip
 Feature: Calculate employee's part of insurance payment
 
   Scenario: Employee 53 years old this year
