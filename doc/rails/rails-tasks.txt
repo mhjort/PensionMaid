@@ -1,0 +1,1 @@
+script/generate migration AddPartNumberToProducts part_number:string 
